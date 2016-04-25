@@ -30,7 +30,7 @@ rtc="base=utc"
 raw_file=./box-disk1.raw
 pidfile=./${name}.pid
 #
-/usr/libexec/qemu-kvm -name ${name} -cpu ${cpu_type} -m ${mem_size} -smp ${cpu_num} -vnc ${vnc_addr}:${vnc_port} -k en-us -rtc ${rtc} -monitor telnet:127.0.0.1:${monitor_port},server,nowait -serial telnet:${serial_addr}:${serial_port},server,nowait -drive file=${raw_file},media=disk,boot=on,index=0,cache=none,if=${drive_type} \
+/usr/libexec/qemu-kvm -name ${name} -cpu ${cpu_type} -m ${mem_size} -smp ${cpu_num} -vnc ${vnc_addr}:${vnc_port} -k en-us -rtc ${rtc} -monitor telnet:127.0.0.1:${monitor_port},server,nowait -serial telnet:${serial_addr}:${serial_port},server,nowait -drive file=${raw_file},media=disk,index=0,cache=none,if=${drive_type} \
 -netdev tap,ifname=${ifname_virt},id=hostnet0,script=,downscript= -device ${nic_driver},netdev=hostnet0,mac=${mac_virt},bus=pci.0,addr=0x3 \
 -netdev tap,ifname=${ifname_mng},id=hostnet2,script=,downscript= -device ${nic_driver},netdev=hostnet2,mac=${mac_mng},bus=pci.0,addr=0x5 \
 -pidfile ${pidfile} -daemonize
