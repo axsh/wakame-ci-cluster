@@ -44,4 +44,5 @@ sudo brctl addbr ${name_mng_br0}
 sudo ip link set ${name_mng_br0} up
 sudo ip addr add ${ip_mng_br0} dev ${name_mng_br0}
 
+sudo iptables -t nat -D POSTROUTING -s ${network_wanedge} -j MASQUERADE || :
 sudo iptables -t nat -A POSTROUTING -s ${network_wanedge} -j MASQUERADE
