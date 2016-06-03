@@ -9,7 +9,7 @@ whereami=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 function for_all_layer_1() {
   local cmd="$1"
 
-  for i in 1 2 3 4 5; do
+  for i in 0 1 2 3 4 5 6; do
     (
       cd ${whereami}/../9${i}-vteskins/
       $cmd
