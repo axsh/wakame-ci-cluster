@@ -17,7 +17,7 @@ name_mng_br0=vnet-br0
 
 macvlan_1_name="testtap"
 macvlan_1_mac="10:AA:FF:10:AA:01"
-macvlan_1_ip="10.210.0.99/24"
+macvlan_1_ip="10.196.36.199/24"
 
 sudo ip link set ${name_ovs_br0} down || true
 sudo brctl delbr ${name_ovs_br0} || true
