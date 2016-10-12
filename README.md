@@ -39,7 +39,7 @@ Create instance.
 ```
 $ ./replace.sh
 $ ps aux|grep qemu
-root     28625 68.8  1.1 1964512 181164 ?      Sl   18:21   0:08 qemu-system-x86_64 -enable-kvm -name kemu311 -cpu qemu64,+vmx -m 1024 -smp 1 -vnc 127.0.0.1:11311 -k en-us -rtc base=utc -monitor telnet:127.0.0.1:14311,server,nowait -serial telnet:127.0.0.1:15311,server,nowait -drive file=./box-disk1.raw,media=disk,boot=on,index=0,cache=none,if=virtio -netdev tap,ifname=kemu311-14311-0,id=hostnet0,script=,downscript= -device virtio-net-pci,netdev=hostnet0,mac=52:54:00:51:06:48,bus=pci.0,addr=0x3 -pidfile kvm.pid -daemonize
+root     28625 68.8  1.1 1964512 181164 ?      Sl   18:21   0:08 qemu-system-x86_64 -enable-kvm -name kemu311 -cpu qemu64,+vmx -m 1024 -smp 1 -vnc 127.0.0.1:11311 -k en-us -rtc base=utc -monitor telnet:127.0.0.1:14311,server,nowait -serial telnet:127.0.0.1:15311,server,nowait -drive file=./box-disk1.raw,media=disk,index=0,cache=none,if=virtio -netdev tap,ifname=kemu311-14311-0,id=hostnet0,script=,downscript= -device virtio-net-pci,netdev=hostnet0,mac=52:54:00:51:06:48,bus=pci.0,addr=0x3 -pidfile kvm.pid -daemonize
 ```
 
 Login the instance with usename := "kemumaki" and password := "kemumaki".
