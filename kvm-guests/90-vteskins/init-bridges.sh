@@ -50,5 +50,3 @@ sudo ip addr add ${ip_mng_br0} dev ${name_mng_br0}
 sudo ip link add link ${name_ovs_wanedge} dev ${macvlan_1_name} address ${macvlan_1_mac} type macvlan
 sudo ip addr add ${macvlan_1_ip} dev ${macvlan_1_name}
 
-sudo iptables -t nat -D POSTROUTING -s ${network_wanedge} -j MASQUERADE || :
-sudo iptables -t nat -A POSTROUTING -s ${network_wanedge} -j MASQUERADE
